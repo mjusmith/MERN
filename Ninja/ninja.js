@@ -24,6 +24,8 @@ class Ninja {
 
 let NinJoe= new Ninja ("Joe")
 
-NinJoe.sayName()
-NinJoe.showStats()
-NinJoe.drinkSake()
+// NinJoe.sayName()
+// NinJoe.showStats()
+// NinJoe.drinkSake()
+
+module.exports = Ninja;
