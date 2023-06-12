@@ -1,12 +1,13 @@
 
 import './App.css';
-import PokeAPI from './components/PokeAPI';
+// import PokeAPI from './components/PokeAPI';
+import PokeAxios from './components/axiosPoke';
 
 function App() {
   return (
     <div className="App">
 
-    <PokeAPI/>
+    <PokeAxios/>
 
     </div>
   );
