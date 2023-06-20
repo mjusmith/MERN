@@ -1,11 +1,11 @@
 import './App.css';
-import {Routes, Route} from 'react-router-dom'
-import Test from './components/Test';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Form from "./components/Form";
 
 function App() {
   return (
     <div className="App">
-      <Test />
+      <Form />
     </div>
   );
 }
