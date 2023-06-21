@@ -2,6 +2,7 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "./components/Form";
 import Create from './components/Create';
+import Details from './components/Details';
 import {Routes, Route} from 'react-router-dom';
 
 function App() {
