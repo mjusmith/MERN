@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate, useParams} from 'react-router-dom'
 import axios from 'axios'
 
 
-const Form = () => {
-    const [productList, setProductList] = useState([]);
+const Dash = () => {
+    const [productList, setProductList]= useState([]);
+    const [deleteToggle, setDeleteToggle]= useState(false)
+    const navigate= useNavigate()
+    const {id} = useParams()
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/products')
@@ -14,7 +17,17 @@ const Form = () => {
         .catch((err) => {
             console.log(`useEffect Error: ${err}`)
         })
-    }, [])
+    }, [deleteToggle])
+
+    const handleDelete= (e, id) => {
+        axios.delete(`http://localhost:8000/api/products/${id}`)
+        .then((res) =>{
+            setDeleteToggle(!deleteToggle)
+        })
+        .catch((err) =>{
+            console.log('Oh no...another error..', err)
+        })
+    }
 
     return (
         <div>
@@ -32,13 +45,13 @@ const Form = () => {
                                 <p>Title: {prod.title}</p>
                                 <p>Price: {prod.price}</p>
                                 <p>Description: {prod.description}</p>
-                                <br></br>
+                                    <br></br>
                                 <button className='btn btn-outline-primary'><Link to={`/details/${prod._id}`}>View</Link></button> <span></span>
-                                <button className='btn btn-outline-info'>Edit</button> <span></span>
-                                <button className='btn btn-outline-warning'>Delete</button>
-                                <br></br>
-                                <br></br>
-                                <br></br>
+                                <button className='btn btn-outline-info'><Link to={`/edit/${prod._id}`}>Edit</Link></button> <span></span>
+                                <button className='btn btn-outline-warning' onClick={(e) => {handleDelete(e, prod._id)}}>Delete</button>
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
                             </div>
                         )
                     })
@@ -48,4 +61,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default Dash
