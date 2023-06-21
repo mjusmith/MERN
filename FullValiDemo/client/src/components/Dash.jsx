@@ -1,13 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import {Link, useNavigate, useParams} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 
 
 const Dash = () => {
     const [productList, setProductList]= useState([]);
     const [deleteToggle, setDeleteToggle]= useState(false)
-    const navigate= useNavigate()
-    const {id} = useParams()
+
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/products')
@@ -40,7 +39,7 @@ const Dash = () => {
                 {
                     productList.map((prod, index) => {
                         return (
-                            <div>
+                            <div key={index}>
                                 <h3>Product</h3>
                                 <p>Title: {prod.title}</p>
                                 <p>Price: {prod.price}</p>

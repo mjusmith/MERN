@@ -7,6 +7,7 @@ const Create = () => {
     const [title, setTitle] = useState('')
     const [price, setPrice] = useState('')
     const [description, setDescription] = useState('')
+
     const navigate= useNavigate()
 
     const submitHandler= (e) => {
@@ -17,7 +18,7 @@ const Create = () => {
             navigate('/')
         })
         .catch((err) =>{
-            console.log("Yikes and error! :", err)
+            console.log("Yikes an error! :", err)
         })
     }
 
