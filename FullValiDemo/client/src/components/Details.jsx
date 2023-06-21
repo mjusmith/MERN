@@ -23,6 +23,8 @@ const Details = () => {
             <p>Title: {product.title}</p>
             <p>Price: {product.price}</p>
             <p>Description: {product.description}</p>
+            <br />
+                    <button className='btn btn-outline-dark mt-3'><Link to={'/'}>Return Home</Link></button>
         </div>
     )
 }
