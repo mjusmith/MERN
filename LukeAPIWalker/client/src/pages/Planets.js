@@ -18,7 +18,7 @@ const Planet = () => {
 }, [id])
 
     return (
-    <>
+    <div>
         {
             planet &&
             <div style={{ margin: "20px" }}>
@@ -29,7 +29,7 @@ const Planet = () => {
                 <p>Population: {planet.population}</p>
             </div>
         }
-    </>
+    </div>
     )
 }
 

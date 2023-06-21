@@ -33,7 +33,7 @@ const Form = () => {
                                 <p>Price: {prod.price}</p>
                                 <p>Description: {prod.description}</p>
                                 <br></br>
-                                <button className='btn btn-outline-primary'>View</button> <span></span>
+                                <button className='btn btn-outline-primary'><Link to={`/details/${prod._id}`}>View</Link></button> <span></span>
                                 <button className='btn btn-outline-info'>Edit</button> <span></span>
                                 <button className='btn btn-outline-warning'>Delete</button>
                                 <br></br>

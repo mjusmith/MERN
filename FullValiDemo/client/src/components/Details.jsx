@@ -1,10 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, Link, useParams } from 'react-router-dom'
 
 const Details = () => {
 
-    
+    const [product, setProduct]= useState('')
+    const {id} = useParams()
+
+    useEffect(() =>{
+        axios.get(`http//localhost:8000/api/products/${id}`)
+        .then((res) =>{
+
+        })
+        .catch((err) =>{
+            console.log('Zoinks! Error!', err)
+        })
+    }, [id])
 
 
 
@@ -17,7 +28,9 @@ const Details = () => {
 
 
     return (
-        <div>Details</div>
+        <h1>
+            Details
+        </h1>
     )
 }
 

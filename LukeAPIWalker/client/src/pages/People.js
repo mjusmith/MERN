@@ -17,7 +17,7 @@ const Person = ( ) => {
 }, [id])
 
     return (
-    <>
+    <div>
         {
             person &&
             <div>
@@ -28,7 +28,7 @@ const Person = ( ) => {
                 <p>Skin Color: {person.skin_color}</p>
             </div>
         }
-    </>
+    </div>
     )
 }
 
